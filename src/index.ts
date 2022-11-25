@@ -1,7 +1,13 @@
-const calc = (a: number, b: number) => {
-  return a - b;
-};
+import express, { Application, Request, Response, NextFunction } from 'express';
 
-const result = calc(1024, 48);
+// Boot express
+const app: Application = express();
+const port = 5000;
 
-console.log(result);
+// Application routing
+app.use('/', (req: Request, res: Response, next: NextFunction) => {
+  res.status(200).send({ data: 'Hello from Ornio AS' });
+});
+
+// Start server
+app.listen(port, () => console.log(`Server is listening on port ${port}!`));
