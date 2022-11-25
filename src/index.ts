@@ -2,4 +2,6 @@ const calc = (a: number, b: number) => {
   return a - b;
 };
 
-console.log(calc(1024, 48));
+const result = calc(1024, 48);
+
+console.log(result);
